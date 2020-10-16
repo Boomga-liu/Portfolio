@@ -1,0 +1,492 @@
+.wrap {
+	font-family: "微軟正黑體", sans-serif;
+	max-width: 1920px;
+}
+
+.header {
+	display: flex;
+	background-color: rgba(0, 0, 0, .8);
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	z-index: 10;
+}
+
+.header .logo {
+	display: flex;
+	align-items: center;
+	padding: 5px 5px 5px 20px;
+	text-decoration: none;
+}
+
+.header .logo h2 {
+	color: #fff;
+	margin-left: 10px;
+}
+
+.header nav li {
+	margin: 0 10px;
+}
+
+.header nav {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	font-size: 0px;
+}
+
+.header a {
+	text-decoration: none;
+	line-height: 60px;
+	display: inline-block;
+	padding: 0 20px 0;
+	font-size: 16px;
+	color: #aaa;
+	font-weight: 900;
+	transition: .5s;
+}
+
+.header nav a:hover {
+	color: #fff
+}
+
+/*-----BANNER-----*/
+.banner {
+	position: relative;
+}
+
+.banner .banner-img {
+	height: 100vh;
+	/* vertical-align: middle; */
+}
+
+.banner .banner-txt {
+	width: 100%;
+	background-color: rgba(0, 0, 0, .5);
+	position: absolute;
+	top: 60px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner-txt h2 {
+	color: #fff;
+	font-size: 80px;
+	font-weight: 700;
+	font-family: Helvetica, Arial;
+}
+
+.banner-txt h2+h2 {
+	padding-top: 5px;
+}
+
+.banner hr,
+.about hr,
+.skill hr,
+.works .portfoliocontent hr,
+.contactcontent hr {
+	width: 50px;
+	height: 4px;
+	background-color: #EA7500;
+	border: none;
+	margin: 30px auto;
+}
+
+.banner-txt p {
+	color: #ccc;
+	line-height: 1.5em;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
+
+.mouse-icon {
+	height: 40px;
+	width: 24px;
+	border: 2px solid #fff;
+	border-radius: 16px;
+	opacity: .7;
+	position: absolute;
+	bottom: 5%;
+}
+
+.wheel {
+	height: 6px;
+	width: 2px;
+	background-color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -3px 0 0 -1px;
+	animation-name: drop;
+	animation-duration: 1s;
+	animation-delay: 0s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+@keyframes drop {
+	0% {
+		top: 10px;
+		opacity: 0;
+	}
+
+	30% {
+		top: 15px;
+		opacity: 1;
+	}
+
+	100% {
+		top: 25px;
+		opacity: 0;
+	}
+}
+
+/*-----ABOUT-----*/
+.aboutcontent,
+.skillcontent,
+.contactcontent {
+	opacity: 0;
+	transform: translateY(60%);
+	transition: 1.3s;
+}
+
+.aboutcontent.active,
+.skillcontent.active,
+.contactcontent.active {
+	opacity: 1;
+	transform: translateY(0%);
+}
+
+.about {
+	background-color: #EA7500;
+	min-height: 400px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.about h2 {
+	font-family: Helvetica, Arial;
+	text-align: center;
+	color: #fff;
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.about hr {
+	background-color: #fff;
+}
+
+.about p {
+	text-align: center;
+	line-height: 2em;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.resume {
+	padding-top: 3%;
+	text-align: center;
+}
+
+.resume a {
+	text-decoration: none;
+	padding: 8px 18px;
+	background-color: #fff;
+	border-radius: 20px;
+	color: #EA7500;
+	transition: .3s;
+}
+
+.resume a:hover {
+	background-color: #000;
+	color: #fff;
+}
+
+.resume a .fa-link {
+	padding-left: 5px;
+}
+
+/*-----SKILL-----*/
+.skill {
+	min-height: 400px;
+	padding-top: 80px;
+	overflow: hidden;
+}
+
+.skill h2 {
+	font-family: Helvetica, Arial;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.skill ul {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+}
+
+.skill li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 25%;
+}
+
+.skill span {
+	font-size: 4em;
+	background-color: #EA7500;
+	padding: 30px;
+	border-radius: 50%;
+	color: #fff;
+}
+
+.skill .fa {
+	width: 64px;
+	height: 64px;
+	text-align: center;
+}
+
+
+.skill h3 {
+	margin: 15px 0;
+	font-size: 22px;
+	font-weight: 500;
+}
+
+.skill p {
+	color: #777;
+}
+
+/*-----WORKS-----*/
+.works {
+	position: relative;
+	max-width: 1920px;
+}
+
+.works .works-img {
+	height: 100vh;
+}
+
+.works .portfoliocontent {
+	background-color: rgba(255, 255, 255, .5);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding-top: 80px;
+}
+
+.works h2 {
+	font-family: Helvetica, Arial;
+	text-align: center;
+	color: #000;
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.allportfolio {
+	margin: auto;
+}
+
+.allportfolio ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.allportfolio li {
+	width: 25%;
+	margin: 10px 10px;
+	transition: .5s;
+	/* position: relative; */
+}
+
+.allportfolio a {
+	position: relative;
+}
+
+.worksli-background {
+	background-color: rgba(63, 63, 63, .5);
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: .5s;
+}
+
+.worksli-background.active {
+	opacity: 1;
+}
+
+.worksli-background h3 {
+	font-size: 30px;
+	text-align: center;
+	margin-top: 110px;
+	background-color: rgba(0, 0, 0, .5);
+	color: #fff;
+	padding: 10px 0;
+}
+
+.allportfolio li.active {
+	width: calc(30% * 1.1);
+	height: calc(30% * 1.1);
+	box-shadow: 0 0 20px;
+}
+
+.allportfolio a {
+	display: block;
+}
+
+.allportfolio li img {
+	width: 100%;
+	height: 100%;
+}
+
+/*-----CONTACT-----*/
+.contact {
+	padding: 80px 0 50px 0;
+	overflow: hidden;
+}
+
+.contact .contactcontent {
+	min-height: 500px;
+}
+
+.contact h2 {
+	font-family: Helvetica, Arial;
+	text-align: center;
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.contact .allcontact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.contact .me {
+	border: 7px solid #eee;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
+.allcontact h3 {
+	font-size: 22px;
+	letter-spacing: 1px;
+	font-family: Helvetica, Arial;
+	font-weight: 700;
+	margin: 10px 0;
+}
+
+.allcontact .fa-envelope {
+	margin-right: 5px;
+}
+
+.allcontact p {
+	color: #777;
+	font-family: Helvetica, Arial;
+}
+
+.allcontact ul {
+	display: flex;
+}
+
+.allcontact li {
+	margin: 30px 20px 0 20px;
+}
+
+.allcontact a {
+	display: block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 50%;
+	color: #fff;
+	background-color: #000;
+	transition: .3s;
+}
+
+.allcontact a:hover {
+	background-color: #EA7500;
+}
+
+/*-----footer-----*/
+.footer {
+	background-color: rgba(0, 0, 0, .5);
+	text-align: center;
+	padding: 60px 0;
+	position: relative;
+}
+
+.footer .footer-img {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.footercontent {
+	color: #fff;
+}
+
+
+
+
+@media screen and (max-width: 769px) {
+	.header nav {
+		display: none;
+	}
+
+	.banner .banner-txt h2 {
+		font-size: 60px;
+	}
+
+	.about {
+		padding: 20px 20px;
+	}
+
+	.about p {
+		font-size: 16px;
+	}
+
+	.resume {
+		padding-top: 10%;
+	}
+
+	.skill ul {
+		flex-direction: column;
+		align-items: center;
+		padding-bottom: 50px;
+		margin-top: 0;
+	}
+
+	.skill li {
+		margin: 10px 0;
+		width: 100%;
+	}
+
+	.allportfolio ul {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.allportfolio li {
+		width: auto;
+	}
+}
