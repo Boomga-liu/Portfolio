@@ -26,7 +26,7 @@ $(document).ready(function () {
 
 
 window.onscroll = function (e) {
-	console.log(e.path[1].scrollY);
+	// console.log(e.path[1].scrollY);
 	let scrollY = e.path[1].scrollY;
 	if (scrollY > 150 && scrollY < 850) {
 		aboutScrolly();
@@ -63,10 +63,34 @@ let removeScrolly = function () {
 	contactcontent.classList.remove('active');
 }
 
-// works 圖片大小變化
+
 window.onload = function () {
+	let page1 = document.getElementById('page1');
+	let page2 = document.getElementById('page2');
+	let page4 = document.getElementById('page4');
+	let touchmoveFn = function () {
+		if (this.id === 'page1') {
+			this.firstElementChild.classList.add('active');
+			page2.firstElementChild.classList.remove('active');
+			page4.firstElementChild.classList.remove('active');
+		} else if (this.id === 'page2') {
+			this.firstElementChild.classList.add('active');
+			page1.firstElementChild.classList.remove('active');
+			page4.firstElementChild.classList.remove('active');
+		} else if (this.id === 'page4') {
+			this.firstElementChild.classList.add('active');
+			page1.firstElementChild.classList.remove('active');
+			page2.firstElementChild.classList.remove('active');
+		}
+
+	}
+	page1.addEventListener('touchmove', touchmoveFn, false);
+	page2.addEventListener('touchmove', touchmoveFn, false);
+	page4.addEventListener('touchmove', touchmoveFn, false);
+
+	// works 圖片大小變化
 	let works = document.querySelectorAll('.allportfolio ul li');
-	console.log(works.length);
+	// console.log(works.length);
 	for (let i = 0; i < works.length; i++) {
 		works[i].addEventListener('mousemove', MouseMoveFn, false);
 		works[i].addEventListener('mouseout', MouseOutFn, false);
